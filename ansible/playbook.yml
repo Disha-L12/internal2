@@ -1,12 +1,12 @@
 - name: Deploy to Tomcat
   hosts: web
   become: yes
-
   tasks:
     - name: Copy WAR file to Tomcat
       copy:
-        src: "../target/internal2.war"
+        src: "/var/snap/jenkins/5013/workspace/internal2-CICD/target/internal2.war"
         dest: "/opt/tomcat/webapps/internal2.war"
+        remote_src: no
 
     - name: Restart Tomcat
       systemd:
