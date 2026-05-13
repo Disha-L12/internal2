@@ -1,12 +1,12 @@
 - name: Deploy to Tomcat
   hosts: web
   become: yes
+
   tasks:
     - name: Copy WAR file to Tomcat
       copy:
-        src: "/var/snap/jenkins/5013/workspace/internal2-CICD/target/internal2.war"
-        dest: "/opt/tomcat/webapps/MavenAnsibleWebApp.war"
-        remote_src: no
+        src: "/home/vboxuser/devops/internal2/target/internal2-1.0-SNAPSHOT.war"
+        dest: "/opt/tomcat/webapps/internal2.war"
 
     - name: Restart Tomcat
       systemd:
