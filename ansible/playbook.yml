@@ -5,7 +5,7 @@
   tasks:
     - name: Copy WAR file to Tomcat
       copy:
-        src: "/home/vboxuser/devops/internal2/target/internal2-1.0-SNAPSHOT.war"
+        src: "target/internal2-1.0-SNAPSHOT.war"
         dest: "/opt/tomcat/webapps/internal2.war"
 
     - name: Restart Tomcat
